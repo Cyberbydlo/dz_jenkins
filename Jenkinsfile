@@ -16,7 +16,8 @@ pipeline {
             steps {
                 sh 'python3 hello.py -n "${NAME_STR}" > result.txt'
             }
-        stage('Save Result') {
+         }   
+     stage('Save Result') {
             steps {
                 // Артефакт сборки - файл result.txt
                 archiveArtifacts artifacts: 'result.txt'
