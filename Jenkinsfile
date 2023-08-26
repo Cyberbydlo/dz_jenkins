@@ -11,7 +11,6 @@ pipeline {
                 sh 'pip install -r requirements.txt'
             }
         }
-     stages {
         stage('Run') {
             steps {
                 sh 'python3 hello.py -n "${NAME_STR}" > result.txt'
@@ -24,5 +23,4 @@ pipeline {
             }
         }
     }
-}
 }
