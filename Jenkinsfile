@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-  string defaultValue: 'Borodin Andrey', name: 'MY_STRING'
+  string defaultValue: 'Borodin Andrey', name: 'NAME_STR'
 }
     stages {
         stage('Build') {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'python3 hello.py -n "${MY_STRING}" > result.txt'
+                sh 'python3 hello.py -n "${NAME_STR}" > result.txt'
             }
          }   
      stage('Save Result') {
